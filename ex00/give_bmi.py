@@ -1,5 +1,6 @@
 import sys
 
+
 def validate_data(heights_lst, weights_lst):
     """validate if data i the right type and comes by pairs
 
@@ -9,10 +10,10 @@ def validate_data(heights_lst, weights_lst):
     """
     try:
         if len(heights_lst) != len(weights_lst):
-            assert False, "Lists most have the same amount of elements"
+            assert False, "Boths lists most have the same amount of elements"
         for i in range(0, len(heights_lst)):
             if (
-                isinstance(heights_lst[i], int | float) is False or \
+                isinstance(heights_lst[i], int | float) is False or
                 isinstance(weights_lst[i], int | float) is False
             ):
                 assert False, "Invalid data type"
@@ -23,7 +24,7 @@ def validate_data(heights_lst, weights_lst):
 
 def give_bmi(
         height: list[int | float], weight: list[int | float]
-    ) -> list[int | float]:
+        ) -> list[int | float]:
     """calcule BMI's with the data of the params
 
     Args:
