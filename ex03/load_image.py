@@ -1,6 +1,7 @@
+import matplotlib.pyplot as plt
 from PIL import Image
 from numpy import array
-# from zoom import ft_zoom
+from zoom import ft_zoom
 
 
 def ft_load(path: str) -> Image:
@@ -16,13 +17,19 @@ def ft_load(path: str) -> Image:
         with Image.open(path) as image:
             image.load()
         print(f"The shape of image is: {array(image).shape}")
-        gray_image = image.convert('L')
-        # new_image = ft_zoom(array(gray_image), 400, 400)
-        print(f"New shape after slicing: {array(gray_image).shape}")
-        gray_image.show()
-        return gray_image
+        return image
     except Exception as e:
         print(f"Error: {e}")
 
+
 if __name__ == "__main__":
-    ft_load("animal.jpeg")
+    image = ft_load("animal.jpeg")
+    print(array(image))
+    gray_image = image.convert('L')
+    zoom_image = ft_zoom(array(gray_image))
+    print(f"New shape after slicing: {zoom_image.shape}")
+    print(zoom_image)
+    # img_from_array = Image.fromarray(zoom_image)
+    # img_from_array.show()
+    # plt.imshow(zoom_image, cmap='gray')
+    plt.imsave('ret_img.png', zoom_image, cmap='gray')
