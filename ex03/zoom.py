@@ -21,5 +21,5 @@ def ft_zoom(img: array):
 
 if __name__ == "__main__":
     image = ft_load("animal.jpeg")
-    print(array(image))
-    ft_zoom(array(image))
+    print(image)
+    ft_zoom(image)
